@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <Header />
-      <AddTodo addTodoItem={handleAddTodoItem} />
+      <AddTodo addTodoItem={handleAddTodoItem} label={"Add Todo Item"} />
       <TodosList todoList={todoData} onDelete={handleDelete} />
     </>
   );

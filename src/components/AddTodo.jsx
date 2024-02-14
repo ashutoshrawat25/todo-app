@@ -1,20 +1,21 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-function AddTodo({ addTodoItem }) {
+function AddTodo({ addTodoItem, label }) {
   const [todoItem, setTodoItem] = useState("");
 
   function handleTodoItem(e) {
     setTodoItem(e.target.value);
   }
   function handleAddTodoItem() {
+    console.log(todoItem);
     addTodoItem(todoItem);
   }
   return (
     <>
       <div className="container mb-2">
         <label htmlFor="todo" className="form-label">
-          Add Todo Item
+          {label}
         </label>
         <input
           type="text"
