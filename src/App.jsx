@@ -16,10 +16,15 @@ function App() {
     fetchTodoData();
   }, []);
 
+  function handleDelete(id) {
+    const newTodos = todoData.filter((todo) => todo.id !== id);
+    setTodoData(newTodos);
+  }
+
   return (
     <>
       <Header />
-      <TodosList todoList={todoData} />
+      <TodosList todoList={todoData} onDelete={handleDelete} />
     </>
   );
 }
