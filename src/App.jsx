@@ -1,10 +1,11 @@
-import "./App.css";
 import Header from "./components/Header";
+import TodosList from "./components/TodosList";
 
 function App() {
   return (
     <>
       <Header />
+      <TodosList />
     </>
   );
 }
