@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-function EditTodo({ onClickCancel, onSetData, editData, onClickAdd }) {
+function EditTodo({ onClickCancel, onSetData, editData, onClickEdit }) {
   return (
     <div className="container">
       <input
@@ -11,8 +11,8 @@ function EditTodo({ onClickCancel, onSetData, editData, onClickAdd }) {
         onChange={(e) => onSetData(e)}
       ></input>
       <div className="d-flex justify-content-center">
-        <button className="btn btn-primary mb-2" onClick={onClickAdd}>
-          Add
+        <button className="btn btn-warning mb-2" onClick={onClickEdit}>
+          Edit
         </button>
         <button className="btn btn-danger mb-2" onClick={onClickCancel}>
           Cancel

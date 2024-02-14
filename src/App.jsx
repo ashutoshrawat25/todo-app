@@ -28,12 +28,29 @@ function App() {
     ]);
     console.log(todoData);
   }
+  function handleEditTodo(id, data) {
+    const index = todoData.findIndex((todo) => todo.id === id);
+    if (index !== -1) {
+      // Update the existing todo in place
+      console.log(todoData[index]);
+      todoData[index] = {
+        ...todoData[index], // Spread previous values
+        todo: data,
+      };
+      console.log(todoData);
+      setTodoData([...todoData]);
+    }
+  }
 
   return (
     <>
       <Header />
       <AddTodo addTodoItem={handleAddTodoItem} label={"Add Todo Item"} />
-      <TodosList todoList={todoData} onDelete={handleDelete} />
+      <TodosList
+        todoList={todoData}
+        onDelete={handleDelete}
+        onEdit={handleEditTodo}
+      />
     </>
   );
 }

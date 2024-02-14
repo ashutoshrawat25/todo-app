@@ -2,7 +2,7 @@ import { useState } from "react";
 import EditTodo from "./EditTodo";
 
 /* eslint-disable react/prop-types */
-function TodoItem({ todoItem, onDelete }) {
+function TodoItem({ todoItem, onDelete, onEdit }) {
   const [edit, setEdit] = useState(false);
   const [editData, setEditData] = useState("");
   function handleSetData(e) {
@@ -15,8 +15,9 @@ function TodoItem({ todoItem, onDelete }) {
   function handleCancelEdit() {
     setEdit(false);
   }
-  function handleAdd() {
-    console.log(editData);
+  function handleEdit(id, editData) {
+    onEdit(id, editData);
+    setEdit(false);
   }
   return (
     <>
@@ -43,7 +44,7 @@ function TodoItem({ todoItem, onDelete }) {
             onClickCancel={handleCancelEdit}
             onSetData={handleSetData}
             editData={editData}
-            onClickAdd={handleAdd}
+            onClickEdit={() => handleEdit(todoItem.id, editData)}
           />
         </>
       )}

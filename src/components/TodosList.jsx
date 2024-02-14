@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 
 /* eslint-disable react/prop-types */
-function TodosList({ todoList, onDelete }) {
+function TodosList({ todoList, onDelete, onEdit }) {
   return (
     <div className="container">
       <h2 className="p-2">Todo List For You</h2>
@@ -12,6 +12,7 @@ function TodosList({ todoList, onDelete }) {
               todoItem={todoItem}
               key={todoItem.id}
               onDelete={onDelete}
+              onEdit={onEdit}
             />
           );
         })}
